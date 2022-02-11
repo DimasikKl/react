@@ -9,7 +9,7 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-  getUsers(currentPage = 1, pageSize = 10) {
+  getUsers(currentPage = 10, pageSize = 10) {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
         .then(response => {
           return response.data;
@@ -41,10 +41,10 @@ export const profileAPI = {
 
 export const authAPI = {
   me() {
-    return instance.get(`auth/me`);
+    return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`);
   },
   login(email, password, rememberMe=false) {
-    return instance.post(`auth/login`, {email, password, rememberMe});
+    return instance.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, {email, password, rememberMe});
   },
   logout() {
     return instance.delete(`auth/login`);
