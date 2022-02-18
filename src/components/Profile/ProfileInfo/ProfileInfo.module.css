@@ -2,20 +2,10 @@
     padding: 10px;
 }
 
-.fullName {
-    text-align: center;
-    font-weight: bold;
+.mainPhoto {
+    max-width: 200px;
 }
 
-.image {
-    width: 100%;
-}
-
-.ava {
-    width: 200px;
-    border-radius: 50%;
-}
-
-.bold {
-    font-weight: bold;
+.contact {
+    padding-left: 10px;
 }
