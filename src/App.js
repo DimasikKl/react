@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from './components/Settings/Settings'
-import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
+import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
@@ -14,24 +14,15 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-stor";
 import {withSuspense} from "./hoc/withSuspense";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends React.Component {
 
-    catchAllUnhandleErrors = (promiseRejectionEvent) => {
-        alert('some error');
-    }
-
     componentDidMount() {
         this.props.initializeApp();
-        window.addEventListener('unhandledrejection', this.catchAllUnhandleErrors);
-    }
 
-    componentWillUnmount() {
-        window.removeEventListener('unhandledrejection', this.catchAllUnhandleErrors);
     }
 
     render() {
@@ -44,8 +35,6 @@ class App extends React.Component {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Switch>
-                        <Route path='/'
-                            render={() => <Redirect to={'/profile'} />} />
                         <Route path='/dialogs'
                             render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'
@@ -79,11 +68,11 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter >
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

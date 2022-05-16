@@ -54,7 +54,7 @@ export const profileAPI = {
 
 export const authAPI = {
   me() {
-    return instance.get(`auth/me`);
+    return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`);
   },
   login(email, password, rememberMe = false, captcha = null) {
     return instance.post(`auth/login`, {email, password, rememberMe, captcha});
