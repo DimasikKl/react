@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.22f6d412.css",
-    "main.js": "/react/static/js/main.a1e4e53a.js",
-    "static/css/642.ba37a1bd.chunk.css": "/react/static/css/642.ba37a1bd.chunk.css",
-    "static/js/642.5715f5e9.chunk.js": "/react/static/js/642.5715f5e9.chunk.js",
-    "static/css/988.1002969e.chunk.css": "/react/static/css/988.1002969e.chunk.css",
-    "static/js/988.eebc0f2b.chunk.js": "/react/static/js/988.eebc0f2b.chunk.js",
+    "main.css": "/react/static/css/main.8f0c73e2.css",
+    "main.js": "/react/static/js/main.488a00b8.js",
+    "static/css/642.0bf07312.chunk.css": "/react/static/css/642.0bf07312.chunk.css",
+    "static/js/642.4353f53c.chunk.js": "/react/static/js/642.4353f53c.chunk.js",
+    "static/css/418.bb535e85.chunk.css": "/react/static/css/418.bb535e85.chunk.css",
+    "static/js/418.ff951a13.chunk.js": "/react/static/js/418.ff951a13.chunk.js",
     "index.html": "/react/index.html",
-    "main.22f6d412.css.map": "/react/static/css/main.22f6d412.css.map",
-    "main.a1e4e53a.js.map": "/react/static/js/main.a1e4e53a.js.map",
-    "642.ba37a1bd.chunk.css.map": "/react/static/css/642.ba37a1bd.chunk.css.map",
-    "642.5715f5e9.chunk.js.map": "/react/static/js/642.5715f5e9.chunk.js.map",
-    "988.1002969e.chunk.css.map": "/react/static/css/988.1002969e.chunk.css.map",
-    "988.eebc0f2b.chunk.js.map": "/react/static/js/988.eebc0f2b.chunk.js.map"
+    "main.8f0c73e2.css.map": "/react/static/css/main.8f0c73e2.css.map",
+    "main.488a00b8.js.map": "/react/static/js/main.488a00b8.js.map",
+    "642.0bf07312.chunk.css.map": "/react/static/css/642.0bf07312.chunk.css.map",
+    "642.4353f53c.chunk.js.map": "/react/static/js/642.4353f53c.chunk.js.map",
+    "418.bb535e85.chunk.css.map": "/react/static/css/418.bb535e85.chunk.css.map",
+    "418.ff951a13.chunk.js.map": "/react/static/js/418.ff951a13.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22f6d412.css",
-    "static/js/main.a1e4e53a.js"
+    "static/css/main.8f0c73e2.css",
+    "static/js/main.488a00b8.js"
   ]
 }
