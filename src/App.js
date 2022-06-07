@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from './components/Settings/Settings'
-import {HashRouter, Route, Switch, withRouter} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
@@ -20,9 +20,18 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 class App extends React.Component {
 
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert('Some error occured!');
+        console.error(promiseRejectionEvent);
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors);
+    }
 
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors);
     }
 
     render() {
@@ -35,10 +44,12 @@ class App extends React.Component {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Switch>
+                        <Route path='/'
+                               render={() => <Redirect to={'/profile'}/>}/>
                         <Route path='/dialogs'
                             render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'
-                            render={withSuspense(ProfileContainer)} />
+                            render={withSuspense(ProfileContainer)}/>
                         <Route path='/users'
                             render={() => <UsersContainer/>}/>
                         <Route path='/news'
@@ -68,11 +79,11 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
     return (
-        <HashRouter >
-            <Provider store={store}>
+        <BrowserRouter >
+            <Provider store={store}>//глобальный контекст, чтоб не прокидывать все через все дерево
                 <AppContainer/>
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 
